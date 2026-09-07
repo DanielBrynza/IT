@@ -1,5 +1,9 @@
-day=input("Введите день недели:\n")
-if not day=="Суббота" or day== "Воскресение":
-    print("Выходной")
-else:
-    print("Рабочий")
+status_code=[200,404,500,200,302]
+failed_codes=[]
+for code in status_code:
+    if code ==200:
+        print("Запрос успешный", code)
+    else:
+        print("Ошибка или перенаправление:", code)
+        failed_codes.append(code)
+print(failed_codes)
