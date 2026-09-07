@@ -1,16 +1,8 @@
-def get_critical_open_bugs(bugs_list):
-    critical_bugs=[]
-    for bug in bugs_list:
-        if bug["severity"]=="CRITICAL" and bug["status"]=="OPEN":
-            critical_bugs.append(bug)
-    return critical_bugs
-all_bugs = [
-    {"id": 1, "severity": "CRITICAL", "status": "OPEN"},
-    {"id": 2, "severity": "LOW", "status": "OPEN"},
-    {"id": 3, "severity": "CRITICAL", "status": "CLOSED"},
-    {"id": 4, "severity": "CRITICAL", "status": "OPEN"}
-]
+import json
 
-# Вызови функцию с этим списком и выведи результат в консоль через print()
-
-print(get_critical_open_bugs(all_bugs))
+test_data = {"test_name": "login_test", "status": "PASSED", "duration": 1.5}
+print(test_data)
+json_string=json.dumps(test_data)
+print(json_string)
+parsed_data=json.loads(json_string)
+print(parsed_data.get("status"))
