@@ -1,0 +1,16 @@
+def get_critical_open_bugs(bugs_list):
+    critical_bugs=[]
+    for bug in bugs_list:
+        if bug["severity"]=="CRITICAL" and bug["status"]=="OPEN":
+            critical_bugs.append(bug)
+    return critical_bugs
+all_bugs = [
+    {"id": 1, "severity": "CRITICAL", "status": "OPEN"},
+    {"id": 2, "severity": "LOW", "status": "OPEN"},
+    {"id": 3, "severity": "CRITICAL", "status": "CLOSED"},
+    {"id": 4, "severity": "CRITICAL", "status": "OPEN"}
+]
+
+# Вызови функцию с этим списком и выведи результат в консоль через print()
+
+print(get_critical_open_bugs(all_bugs))
